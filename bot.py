@@ -12,7 +12,7 @@ bot = telebot.TeleBot("...")
 @bot.message_handler(commands=["start"])
 def start(message):
     # Connect to the database and create a table 
-    conn = sqlite3.connect("words.db")
+    conn = sqlite3.connect("test.db")
     cur = conn.cursor()
     cur.execute("CREATE TABLE IF NOT EXISTS words (id INTEGER PRIMARY KEY AUTOINCREMENT, korean TEXT, english TEXT)")
     conn.commit()
